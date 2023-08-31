@@ -31,7 +31,7 @@ nav{
 
 
 .displayCards{
-  padding: 11px;
+  padding-top: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

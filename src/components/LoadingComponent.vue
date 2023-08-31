@@ -15,12 +15,7 @@
 
 <style scoped>
 
-div{
 
-  
-
-
-}
 
 .body{
 
@@ -34,7 +29,7 @@ div{
 .loader {
 
   border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
+  border-top: 16px solid black; /* Blue */
   border-radius: 50%;
   width: 90px;
   height: 90px;

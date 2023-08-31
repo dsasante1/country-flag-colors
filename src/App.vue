@@ -23,6 +23,7 @@ import DisplayFlagComponent from './components/DisplayFlagComponent.vue';
 </script>
 
 <template>
+  <div class="body">
   
       <!-- <nav>
         <RouterLink to="/">Home</RouterLink>
@@ -86,6 +87,7 @@ import DisplayFlagComponent from './components/DisplayFlagComponent.vue';
 
   <!-- <RouterView /> -->
 
+</div>
 
 </template>
 

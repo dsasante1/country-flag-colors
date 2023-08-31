@@ -1,6 +1,8 @@
 
 <script setup>
 
+import { ref } from 'vue'
+
 // import { fetchedData } from '@/stores/countryData'
 
 
@@ -10,6 +12,13 @@
 // let {countryData} = everyCountryData
 
 
+
+const userQuery = ref("")
+
+
+function resetQuery(){
+    userQuery.value = ""
+}
 
 
 </script>
@@ -22,7 +31,8 @@
 
     <span class="searchSection">
         <img id="magnifyGlass" src="@/assets/searchIcon.svg" alt="magnifying glass">
-        <input type="text"  placeholder="Search for a country..."/>
+        <input type="text" v-model="userQuery" placeholder="Search for a country..."/>
+        <span class="clearInput" @click="resetQuery()"> &#10006;</span>
     </span>
 
  
@@ -61,6 +71,9 @@
 
 <style scoped>
 
+
+
+
 .inputSection{
   
   padding: 20px;
@@ -74,7 +87,7 @@
 .searchSection{
   border: solid #211e41;
   padding: 15px;
-  padding-right: 250px;
+  /* padding-right: 10px; */
   padding-left: 20px;
   display: flex;
   flex-direction: row;
@@ -91,6 +104,7 @@ input{
     color: black;
     border: none;
     font-size: medium;
+    padding-right: 200px;
     
 }
 
@@ -100,21 +114,23 @@ textarea:focus, input:focus{
 
 
 
+.clearInput, option{
+    cursor: pointer;
+}
 
-
-
+/* 
 .searchButton{
    
     color: black;
     border-radius: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
     padding: 15px;
     cursor: pointer;
     border-style:none;
 
 
-}
+} */
 
 
 .filterByRegion{
@@ -124,7 +140,7 @@ textarea:focus, input:focus{
     padding: 15px;
     border: solid;
     align-items: center;
-
+    cursor: pointer;
     
 }
 
@@ -165,6 +181,7 @@ input{
     color: black;
     border: none;
     font-size: small;
+    padding: 5px;
     
 }
 
@@ -183,8 +200,13 @@ textarea:focus, input:focus{
     
 }
 
+.clearInput, option{
+    cursor: pointer;
+}
 
- 
+
+
+
 
 }
 
