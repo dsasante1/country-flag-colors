@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import axios from 'axios'
 
-export const countryData = defineStore('countryData', () => {
+export const storeData = defineStore('countryData', () => {
 
 
     // const userQuery = ref("")
@@ -31,7 +31,7 @@ export const countryData = defineStore('countryData', () => {
 
        everyCountryData.value = data.data
 
-        console.log(everyCountryData.value)
+        console.log(everyCountryData.value[1])
 
         });
     }catch (error){
@@ -39,12 +39,15 @@ export const countryData = defineStore('countryData', () => {
         errorState.value = true
         errorMessage.value = error
 
+    }finally{
+        isLoading.value = false
+        
         }
     }
-
+    
   
   
-  
+    fetchCountriesData()
   
   
   

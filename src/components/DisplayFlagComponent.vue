@@ -25,13 +25,13 @@ defineProps([
     
     <span class="cardDetails">
 
-        <div id="countryName">{{countryName}}</div>
+        <span id="countryName">{{countryName}}</span>
         
-        <div id="countryDetails">
-            <div>Population: {{ population }}</div>
-            <div>Region: {{ region }}</div>
-            <div>Capital: {{ capital }}</div>
-        </div>
+        <span id="countryDetails">
+            <span>Population: {{ population }}</span>
+            <span>Region: {{ region }}</span>
+            <span>Capital: {{ capital }}</span>
+        </span>
 
     </span>
 
@@ -65,7 +65,7 @@ defineProps([
 .cardDetails{
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
 }
 
 

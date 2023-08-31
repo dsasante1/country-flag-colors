@@ -16,15 +16,15 @@
 <style scoped>
 
 div{
-    border: solid 1px;
-    background-color: #141d2f;
+
+  
 
 
 }
 
 .body{
-  background-color: #141d2f;
-  padding-bottom: 400px;
+
+
   display: flex;
   justify-content: center;
   align-items: center;

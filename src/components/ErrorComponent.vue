@@ -37,12 +37,11 @@ if(fetchErrorMessage.includes("400")){
 div{
     text-align: center;
     color: red;
-    background-color: #141d2f; 
+
 }
 
 .body{
-  background-color: #141d2f;
-  padding-bottom: 400px;
+
 
 }
 

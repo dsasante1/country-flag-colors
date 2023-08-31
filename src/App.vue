@@ -5,19 +5,19 @@
 
 import { storeToRefs } from 'pinia';
 
-import { allcountryData } from '@/stores/countryData'
+import { storeData } from '@/stores/countryData'
 
 
-// let everyCountryData = allCountryData()
+let fetchedCountryData = storeData()
 
 
-// let {dataFetched, errorState, isLoading, errorMessage} = storeToRefs(everyCountryData)
+let {everyCountryData , errorState, isLoading, errorMessage} = storeToRefs(fetchedCountryData)
 
 
 
 import SearchComponent from './components/SearchComponent.vue';
-// import LoadingComponent from './components/LoadingComponent.vue';
-// import ErrorComponent from './components/ErrorComponent.vue';
+import LoadingComponent from './components/LoadingComponent.vue';
+import ErrorComponent from './components/ErrorComponent.vue';
 import DisplayFlagComponent from './components/DisplayFlagComponent.vue';
 
 </script>
@@ -45,17 +45,36 @@ import DisplayFlagComponent from './components/DisplayFlagComponent.vue';
       <div>
 
         <SearchComponent />
-        <!-- <LoadingComponent />
-        <ErrorComponent  /> -->
 
+      </div>
 
+      <div v-if="isLoading">
+        <LoadingComponent />
+      </div>
+     
+      <div v-if="errorState">
+        <ErrorComponent  :errorMessage="errorMessage"/>
+      </div>
+      
+
+      <div class="displayCards"> 
         
-      </div>
+      <span  v-for="data in everyCountryData" :key="data.name">
+
+        <DisplayFlagComponent 
+      
+          :flag="data.flag"
+          :countryName="data.name.common"
+          :population="data.population" 
+          :region="data.region" 
+          :capital="data.capital"
+        
+        />
 
 
-      <div class="displayCards">
-        <DisplayFlagComponent />
-      </div>
+      </span>
+
+    </div>
    
 
 

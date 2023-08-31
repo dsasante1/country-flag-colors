@@ -31,19 +31,33 @@ nav{
 
 
 .displayCards{
+  padding: 11px;
   display: flex;
   flex-direction: row;
-  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+
+
+
 }
 
 
+/* #grid{
+
+  display: grid;
+  grid-template-columns: 256px 256px 256px 256px;
+  grid-template-rows: 450px 450px;
+  grid-gap:1.5em;
+} */
 
 
 
 
 
 
-@media only screen and (max-width: 900px){
+
+/* @media only screen and (max-width: 900px){
 
   .displayCards{
     display: flex;
@@ -54,7 +68,7 @@ nav{
    
   
   }
-  
+   */
   
   
 
