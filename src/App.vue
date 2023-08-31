@@ -3,9 +3,22 @@
 // import { RouterLink, RouterView } from 'vue-router'
 // import HelloWorld from './components/HelloWorld.vue'
 
+import { storeToRefs } from 'pinia';
+
+import { allcountryData } from '@/stores/countryData'
+
+
+// let everyCountryData = allCountryData()
+
+
+// let {dataFetched, errorState, isLoading, errorMessage} = storeToRefs(everyCountryData)
+
+
+
 import SearchComponent from './components/SearchComponent.vue';
 // import LoadingComponent from './components/LoadingComponent.vue';
 // import ErrorComponent from './components/ErrorComponent.vue';
+import DisplayFlagComponent from './components/DisplayFlagComponent.vue';
 
 </script>
 
@@ -34,8 +47,16 @@ import SearchComponent from './components/SearchComponent.vue';
         <SearchComponent />
         <!-- <LoadingComponent />
         <ErrorComponent  /> -->
+
+
         
       </div>
+
+
+      <div class="displayCards">
+        <DisplayFlagComponent />
+      </div>
+   
 
 
 

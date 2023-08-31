@@ -1,13 +1,15 @@
 
 <script setup>
 
-// import { userData } from '@/stores/githubUserData'
+// import { fetchedData } from '@/stores/countryData'
 
 
-// const userGithubData = userData()
+// const everyCountryData = fetchedData()
 
 
-// const {fetchUserData} = userGithubData
+// let {countryData} = everyCountryData
+
+
 
 
 </script>
@@ -26,7 +28,7 @@
  
 
 
-    <select name="filterByRegion" class="filterByRegion">
+    <select name="Filter by Region" class="filterByRegion">
         <option value="">Filter by Region</option>
         <option value="africa">Africa</option>
         <option value="asia">Asia</option>
@@ -174,8 +176,8 @@ textarea:focus, input:focus{
 .filterByRegion{
     color: black;
     background-color: white;
-    font-size: medium;
-    padding: 20px;
+    font-size: small;
+    padding: 10px;
     border: solid;
 
     

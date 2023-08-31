@@ -27,3 +27,35 @@ nav{
 
 
 }
+
+
+
+.displayCards{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 900px){
+
+  .displayCards{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+   
+  
+  }
+  
+  
+  
+
+      
