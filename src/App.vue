@@ -1,13 +1,16 @@
 <script setup>
+
 // import { RouterLink, RouterView } from 'vue-router'
 // import HelloWorld from './components/HelloWorld.vue'
+
+import SearchComponent from './components/SearchComponent.vue';
+// import LoadingComponent from './components/LoadingComponent.vue';
+// import ErrorComponent from './components/ErrorComponent.vue';
+
 </script>
 
 <template>
   
-    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
-
-
       <!-- <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -25,9 +28,19 @@
         
       </nav>
 
-      <div class="searchFilterSection">
 
+      <div>
+
+        <SearchComponent />
+        <!-- <LoadingComponent />
+        <ErrorComponent  /> -->
+        
       </div>
+
+
+
+
+
 
 
 
