@@ -1,24 +1,70 @@
 
 <script setup>
 
-import { ref } from 'vue'
+import { reactive, watch } from 'vue'
 
-// import { fetchedData } from '@/stores/countryData'
+import { storeData } from '@/stores/countryData'
 
-
-// const everyCountryData = fetchedData()
-
-
-// let {countryData} = everyCountryData
+import { storeToRefs } from 'pinia';
 
 
+let fetchedCountryData = storeData()
 
-const userQuery = ref("")
+// let {searchData } = storeToRefs(fetchedCountryData)
+
+
+import debounce from 'lodash.debounce'
+
+const form = reactive ({
+
+    userQuery: null,
+    selectedFilter: null
+
+})
+
+// const userQuery = ref("")
+// const selectedFilter = ref("")
 
 
 function resetQuery(){
-    userQuery.value = ""
+    form.userQuery = ""
 }
+
+
+
+function v(){
+    if ( form.userQuery !== "" && form.selectedFilter !== null){
+        debounce(() => {
+    fetchedCountryData.searchData(    
+    form.userQuery,
+    form.selectedFilter
+    )
+
+    console.log(`debounce button clicked! ${form.userQuery} - ${form.selectedFilter}`)
+}, 600)
+    }
+   
+}
+
+
+
+
+
+const sendUserQuery = debounce(() => {
+    fetchedCountryData.searchData(    
+    form.userQuery,
+    form.selectedFilter
+    )
+
+    console.log(`debounce button clicked! ${form.userQuery} - ${form.selectedFilter}`)
+}, 2000)
+    
+
+
+
+watch(form, sendUserQuery)
+
+
 
 
 </script>
@@ -31,14 +77,14 @@ function resetQuery(){
 
     <span class="searchSection">
         <img id="magnifyGlass" src="@/assets/searchIcon.svg" alt="magnifying glass">
-        <input type="text" v-model="userQuery" placeholder="Search for a country..."/>
+        <input type="text" v-model="form.userQuery" placeholder="Search for a country..."/>
         <span class="clearInput" @click="resetQuery()"> &#10006;</span>
     </span>
 
  
 
 
-    <select name="Filter by Region" class="filterByRegion">
+    <select name="Filter by Region" class="filterByRegion" v-model="form.selectedFilter">
         <option value="">Filter by Region</option>
         <option value="africa">Africa</option>
         <option value="asia">Asia</option>
@@ -118,19 +164,7 @@ textarea:focus, input:focus{
     cursor: pointer;
 }
 
-/* 
-.searchButton{
-   
-    color: black;
-    border-radius: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding: 15px;
-    cursor: pointer;
-    border-style:none;
 
-
-} */
 
 
 .filterByRegion{

@@ -7,6 +7,9 @@ export const storeData = defineStore('countryData', () => {
 
 
     // const userQuery = ref("")
+    // const userFilter = ref("")
+    const query = ref("")
+
 
     // let dataFetched = ref({});
 
@@ -14,7 +17,7 @@ export const storeData = defineStore('countryData', () => {
     const errorState = ref(false)
     const errorMessage = ref("")
 
-    // const query = ref("")
+   
 
 
     const everyCountryData = ref({})
@@ -49,7 +52,54 @@ export const storeData = defineStore('countryData', () => {
   
     fetchCountriesData()
   
-  
+    
+    async function searchData(userQuery, userFilter){
+
+        const defaultFilter = "all"
+
+    if (userQuery !== ""){
+
+        if (userFilter !== null && userFilter !== ""){
+            query.value = (`https://api.github.com/users/${userQuery.value}`)
+        }else{
+            query.value = (`https://api.github.com/users/${userQuery.value}`)
+        }
+
+        https://restcountries.com/v3.1/{service}?fields={field},{field},{field}
+
+        https://restcountries.com/v3.1/all?fields=name,capital,currencies
+
+
+
+        try{
+
+            isLoading.value = true
+            errorState.value = false
+
+           await axios.get(query.value).then((data) =>  {
+
+            
+            everyCountryData.value = data.data
+
+            });
+        }catch (error){
+
+            errorState.value = true
+            errorMessage.value = error
+        }finally{
+            isLoading.value = false
+            userQuery.value = ""
+
+        }
+  }
+
+}
+
+
+
+
+
+    
   
 //     async function fetchUserData(){
 
@@ -91,7 +141,8 @@ export const storeData = defineStore('countryData', () => {
     everyCountryData,
     isLoading, 
     errorState ,
-    errorMessage
+    errorMessage,
+    searchData
 
     }
 })
