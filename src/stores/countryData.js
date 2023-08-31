@@ -27,11 +27,11 @@ export const storeData = defineStore('countryData', () => {
         isLoading.value = true
         errorState.value = false
 
-       await axios.get(`https://restcountries.com/v3.1/all?fields=name,flags`).then((data) =>  {
+       await axios.get(`https://restcountries.com/v3.1/all`).then((data) =>  {
 
        everyCountryData.value = data.data
 
-        console.log(everyCountryData.value[1])
+        console.log(everyCountryData.value[2])
 
         });
     }catch (error){

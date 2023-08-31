@@ -58,12 +58,12 @@ import DisplayFlagComponent from './components/DisplayFlagComponent.vue';
       
 
       <div class="displayCards"> 
-        
+
       <span  v-for="data in everyCountryData" :key="data.name">
 
         <DisplayFlagComponent 
       
-          :flag="data.flag"
+          :flag="data.flags.svg"
           :countryName="data.name.common"
           :population="data.population" 
           :region="data.region" 
