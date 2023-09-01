@@ -1,7 +1,9 @@
 
 <script setup>
 
-defineProps([
+import { ref } from 'vue'
+
+const countryData = defineProps([
     'flag',
     'countryName',
     'population',
@@ -11,7 +13,12 @@ defineProps([
 ])
 
 
+const captial_city = ref("")
 
+
+if(countryData.capital !== undefined){
+    captial_city.value = countryData.capital.join()
+}
 </script>
 
 
@@ -19,7 +26,7 @@ defineProps([
 
 <template>
 
-<span class="displayCard">
+<span class="displayCard" >
     
     <img class="cardImage" :src="flag" >
     
@@ -30,7 +37,7 @@ defineProps([
         <span id="countryDetails">
             <div>Population: {{ population }}</div>
             <div>Region: {{ region }}</div>
-            <div>Capital: {{ capital }}</div>
+            <div>Capital: {{ captial_city }}</div>
         </span>
 
     </span>
@@ -57,6 +64,7 @@ defineProps([
     gap: 20px;
     border: solid;
     box-shadow: 5px 5px #f3f3f3;
+    cursor: pointer;
 }
 
 .cardImage{

@@ -1,15 +1,12 @@
-
 <script setup>
+// import CardDetailsComponent from '../components/CardDetailsComponent.vue'
 
-const data = defineProps([
-'data'
+defineProps([
+  'data'
+
 ])
 
-
-
 </script>
-
-
 
 
 <template>
@@ -45,7 +42,7 @@ const data = defineProps([
 </span>
 
 <span class="borderItems">
-    <span> Border Countries: {{ data.border_countries }}</span>
+    <span> Border Countries: {{ border_countries }}</span>
 
 </span>
 

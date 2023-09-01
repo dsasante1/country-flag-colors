@@ -5,7 +5,7 @@ import { reactive, watch } from 'vue'
 
 import { storeData } from '@/stores/countryData'
 
-import { storeToRefs } from 'pinia';
+// import { storeToRefs } from 'pinia';
 
 
 let fetchedCountryData = storeData()
@@ -32,19 +32,6 @@ function resetQuery(){
 
 
 
-function v(){
-    if ( form.userQuery !== "" && form.selectedFilter !== null){
-        debounce(() => {
-    fetchedCountryData.searchData(    
-    form.userQuery,
-    form.selectedFilter
-    )
-
-    console.log(`debounce button clicked! ${form.userQuery} - ${form.selectedFilter}`)
-}, 600)
-    }
-   
-}
 
 
 
@@ -86,6 +73,7 @@ watch(form, sendUserQuery)
 
     <select name="Filter by Region" class="filterByRegion" v-model="form.selectedFilter">
         <option value="">Filter by Region</option>
+        <option selected value="all">All</option>
         <option value="africa">Africa</option>
         <option value="asia">Asia</option>
         <option value="europe">Europe</option>

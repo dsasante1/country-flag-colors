@@ -34,7 +34,6 @@ export const storeData = defineStore('countryData', () => {
 
        everyCountryData.value = data.data
 
-        console.log(everyCountryData.value[2])
 
         });
     }catch (error){
@@ -48,27 +47,22 @@ export const storeData = defineStore('countryData', () => {
         }
     }
     
+    
   
   
     fetchCountriesData()
-  
+
+    
+
     
     async function searchData(userQuery, userFilter){
 
-        const defaultFilter = "all"
+    if (userQuery !== "" && userFilter !== null){
 
-    if (userQuery !== ""){
+      
+            query.value = (`https://restcountries.com/v3.1/region/${userFilter}?fields=${userQuery}`)
 
-        if (userFilter !== null && userFilter !== ""){
-            query.value = (`https://api.github.com/users/${userQuery.value}`)
-        }else{
-            query.value = (`https://api.github.com/users/${userQuery.value}`)
-        }
-
-        https://restcountries.com/v3.1/{service}?fields={field},{field},{field}
-
-        https://restcountries.com/v3.1/all?fields=name,capital,currencies
-
+            console.log(query.value)
 
 
         try{
