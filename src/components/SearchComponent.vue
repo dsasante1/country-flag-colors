@@ -73,8 +73,7 @@ watch(form, sendUserQuery)
 
     <select name="Filter by Region" class="filterByRegion" v-model="form.selectedFilter">
         <option value="">Filter by Region</option>
-        <option selected value="all">All</option>
-        <option value="africa">Africa</option>
+        <option selected value="africa">Africa</option>
         <option value="asia">Asia</option>
         <option value="europe">Europe</option>
         <option value="Oceania">Oceania</option>

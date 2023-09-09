@@ -32,12 +32,12 @@ if(countryData.capital !== undefined){
     
     <span class="cardDetails">
 
-        <span id="countryName">{{countryName}}</span>
+        <h2 id="countryName">{{countryName}}</h2>
         
         <span id="countryDetails">
-            <div>Population: {{ population }}</div>
-            <div>Region: {{ region }}</div>
-            <div>Capital: {{ captial_city }}</div>
+            <div><strong>Population:</strong> {{ population }}</div>
+            <div><strong>Region:</strong> {{ region }}</div>
+            <div><strong>Capital:</strong> {{ captial_city }}</div>
         </span>
 
     </span>
@@ -62,7 +62,7 @@ if(countryData.capital !== undefined){
     display: flex;
     flex-direction:column;
     gap: 20px;
-    border: solid;
+    border: solid; 
     box-shadow: 5px 5px #f3f3f3;
     cursor: pointer;
 }
@@ -71,6 +71,7 @@ if(countryData.capital !== undefined){
     width: 294px;
     height: 200px;
     object-fit: cover;
+   
 }
 
 .cardDetails{

@@ -14,7 +14,7 @@ const router = createRouter({
       path: '/card/:data',
       name: 'cards',
       component: DetailedCardView,
-      props: { data: true}
+      props:true
     }
   ]
 })

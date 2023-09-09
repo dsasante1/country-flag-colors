@@ -1,0 +1,8 @@
+- Search should work
+- Search box should be debounced
+- Filter should work
+- Search should be based on current filter
+- Loading state
+- Dark /Light mode toggle
+- Should be responsive
+
