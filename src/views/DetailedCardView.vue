@@ -25,6 +25,8 @@ async function countryBio() {
 
     fetchedCountryDetails.value = await fetchedCountryData.getCountryInfo(router.params.data)
 
+    console.log(fetchedCountryDetails.value)
+
     }
 
 
@@ -78,16 +80,17 @@ countryBio()
 
 
 
+<!-- v-if="fetchedCountryDetails" -->
 
-<span v-if="fetchedCountryDetails" class="displayCard">
+<span  class="displayCard">
 
-<img class="cardImage" :src="fetchedCountryDetails.flags.svg" > 
+<img class="cardImage" :src="fetchedCountryDetails.flag" >
 
 
 
 <span   class="cardDetails">
 
-<h1 id="countryName">{{fetchedCountryDetails.name.common}}</h1>
+<h1 id="countryName">{{fetchedCountryDetails.name}}</h1>
 
 <span id="countryDetails">
 
@@ -98,35 +101,35 @@ countryBio()
         <strong>
             Native Name:
         </strong>
-         {{ fetchedCountryDetails.name.nativeName}}
+         {{ fetchedCountryDetails.nativeName}}
         </p>
 
     <p>
         <strong>
             Population:
-        </strong> 
+        </strong>
         {{ fetchedCountryDetails.population }}
     </p>
 
     <p>
         <strong>
             Region:
-        </strong> 
+        </strong>
         {{ fetchedCountryDetails.region }}
     </p>
 
     <p>
         <strong>
             Sub Region:
-        </strong> 
+        </strong>
         {{ fetchedCountryDetails.subregion }}
     </p>
 
     <p>
         <strong>
             Capital:
-        </strong> 
-        {{ fetchedCountryDetails.capital.toString() }}
+        </strong>
+        {{ fetchedCountryDetails.capital }}
     </p>
 
 </span>
@@ -135,8 +138,8 @@ countryBio()
     <p>
         <strong>Top Level Domain:
 
-        </strong> 
-        {{ fetchedCountryDetails.tld.toString() }}
+        </strong>
+        {{ fetchedCountryDetails.domain }}
     </p>
     <p>
         <strong>
@@ -146,7 +149,7 @@ countryBio()
     <p>
         <strong>
             Languages:
-        </strong> 
+        </strong>
         {{ fetchedCountryDetails.languages}}
     </p>
 </span>
