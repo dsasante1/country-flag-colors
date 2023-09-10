@@ -16,7 +16,7 @@ export const countryData = defineStore('countryDetailData', () => {
 
 
 
-    // get native name from nested object
+    // get native name from nested native name
     function getCommonNativeName(objectItem){
 
         let objectValue = Object.values(objectItem)
@@ -39,11 +39,26 @@ export const countryData = defineStore('countryDetailData', () => {
         let currencyObject = Object.values(currency)
 
         if (currencyObject.length === 1){
-            return currencyObject[0].common
+            return currencyObject[0].name
         }else{
-            return currencyObject[1].common
+            return currencyObject[1].name
         }
     }
+
+
+
+    //get languages from nested languages
+    function getCurrency(languages){
+
+        let currencyObject = Object.values(languages)
+
+        if (currencyObject.length === 1){
+            return currencyObject[0].name
+        }else{
+            return currencyObject[1].name
+        }
+    }
+
 
 
 
@@ -78,7 +93,7 @@ export const countryData = defineStore('countryDetailData', () => {
             capital : fetchedInfo.capital.toString(),
             domain : fetchedInfo.tld.toString(),
             currencies : getCurrency(fetchedInfo.currencies),
-            languages : fetchedInfo.languages,
+            languages : Object.values(fetchedInfo.languages).toString(),
             borders : fetchedInfo.borders ?? 'No borders',
             }
             // native name
