@@ -48,16 +48,16 @@ export const countryData = defineStore('countryDetailData', () => {
 
 
     //get languages from nested languages
-    function getCurrency(languages){
-
-        let currencyObject = Object.values(languages)
-
-        if (currencyObject.length === 1){
-            return currencyObject[0].name
-        }else{
-            return currencyObject[1].name
-        }
-    }
+    // function getCurrency(languages){
+    //
+    //     let currencyObject = Object.values(languages)
+    //
+    //     if (currencyObject.length === 1){
+    //         return currencyObject[0].name
+    //     }else{
+    //         return currencyObject[1].name
+    //     }
+    // }
 
 
 
@@ -77,7 +77,6 @@ export const countryData = defineStore('countryDetailData', () => {
 
             let fetchedInfo = data.data[0]
 
-            console.log('fetched data ->', fetchedInfo)
 
             //extract data here
 
@@ -96,12 +95,10 @@ export const countryData = defineStore('countryDetailData', () => {
             languages : Object.values(fetchedInfo.languages).toString(),
             borders : fetchedInfo.borders ?? 'No borders',
             }
-            // native name
-            // currencies
-            // languages
 
 
-           //console.log('countryinfo native', countryDataInfo)
+
+
 
 
             return countryDataInfo

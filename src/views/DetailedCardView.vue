@@ -25,7 +25,6 @@ async function countryBio() {
 
     fetchedCountryDetails.value = await fetchedCountryData.getCountryInfo(router.params.data)
 
-    console.log(fetchedCountryDetails.value)
 
     }
 
@@ -66,7 +65,7 @@ countryBio()
 
 <div class="body">
 
-    <RouterLink to="/"><button>Back</button></RouterLink>
+    <p id="arrow"><RouterLink to="/">&#x2190; Back</RouterLink></p>
 
 
 
@@ -196,6 +195,9 @@ countryBio()
 }
 
 
+#arrow{
+    text-decoration: none;
+}
 
 
 .displayCard{
